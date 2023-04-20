@@ -1,4 +1,8 @@
 # Source code
 
-The src directory is home to the actual codebase of the application and the target of our build tools.
-In this directory you should leave all the source code you have developed for your assignment.
+The src directory is home to the different examples:
+* tic-tac-toe: The game implementation from start to end version.
+
+Use:
+* npm create vite@latest <project-name>
+To create a React Project.
