@@ -1,0 +1,7 @@
+{
+  "entryPoints": [
+    "/home/usuario/practicas/2022-2023-pai-react-reactteam/src/tic-tac-toe/tic-tac-toe-v1/src/App.tsx",
+    "/home/usuario/practicas/2022-2023-pai-react-reactteam/src/tic-tac-toe/tic-tac-toe-v1/src/index.tsx"
+  ],
+  "out": "./docs/doc/v1/"
+}
