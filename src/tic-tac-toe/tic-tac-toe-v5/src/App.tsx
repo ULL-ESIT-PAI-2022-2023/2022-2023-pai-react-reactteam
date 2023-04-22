@@ -31,7 +31,7 @@ export default function Board(): JSX.Element {
    * @param index The square index.
    */
   function handleClick(index: number): void {
-    const nextSquares = squares.slice();
+    const nextSquares: string[] = squares.slice();
     nextSquares[index] = "X";
     setSquares(nextSquares);
   }

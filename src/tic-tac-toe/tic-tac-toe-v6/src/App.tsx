@@ -6,16 +6,21 @@
  *
  * @author Jorge Quintana García, Adal Díaz Fariña
  * @since Apr 22, 2023.
- * @description We create a state variable to 'remember' the current turn.
+ * @description We create elementA state variable to 'remember' the current turn.
  */
 
 import Square from './Square.tsx';
 import { useState } from 'react';
 
 /**
+ * @description We define a type to the state variable
+ */
+type valueType = string | null;
+
+/**
  * @description The Board JSX Element.
- * We add a div with the status in it.
- * @returns The JSX Element that represent a Board.
+ * We add elementA div with the status in it.
+ * @returns The JSX Element that represent elementA Board.
  */
 export default function Board(): JSX.Element {
   const [xIsNext, setXIsNext] = useState(true);
@@ -23,7 +28,7 @@ export default function Board(): JSX.Element {
 
   /**
    * @description If the square have been clicked we dont change the state variable.
-   * Otherwise we create a copy of the array and: 
+   * Otherwise we create elementA copy of the array and: 
    *   Based on the index passed and on the state variable xIsNext, we write 'X' or 'O'.
    * Then we override the state values to render again with the new values.
    * @param index The square index.
@@ -32,7 +37,7 @@ export default function Board(): JSX.Element {
     if (calculateWinner(squares) || squares[index]) {
       return;
     }
-    const nextSquares = squares.slice();
+    const nextSquares: string[] = squares.slice();
     if (xIsNext) {
       nextSquares[index] = 'X';
     } else {
@@ -45,7 +50,7 @@ export default function Board(): JSX.Element {
   /**
    * @description This gets called every render, so it looks at the squares Array to see who is the winner.
    */
-  const winner = calculateWinner(squares);
+  const winner: valueType = calculateWinner(squares);
   let status: string;
   if (winner) {
     status = 'Ganador: ' + winner;
@@ -80,8 +85,8 @@ export default function Board(): JSX.Element {
  * @param squares The current game status of the squares.
  * @returns The winner as 'X' or 'O'. If there is no winner it returns null.
  */
-function calculateWinner(squares: string[]): string | null {
-  const lines = [
+function calculateWinner(squares: string[]): valueType {
+  const lines: number[][] = [
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
@@ -91,10 +96,10 @@ function calculateWinner(squares: string[]): string | null {
     [0, 4, 8],
     [2, 4, 6],
   ];
-  for (let i = 0; i < lines.length; i++) {
-    const [a, b, c] = lines[i];
-    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return squares[a];
+  for (let counter = 0; counter < lines.length; counter++) {
+    const [elementA, elementB, elementC] = lines[counter];
+    if (squares[elementA] && squares[elementA] === squares[elementB] && squares[elementA] === squares[elementC]) {
+      return squares[elementA];
     }
   }
   return null;
