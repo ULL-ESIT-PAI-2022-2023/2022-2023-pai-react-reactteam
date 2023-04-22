@@ -8,3 +8,5 @@ It begins with a single square component and ends with a fully usable tic-tac-to
 * tic-tac-toe-v4: Adding interactivity.
 * tic-tac-toe-v5: Adding interactivity and lifting the state up to the parent component.
 * tic-tac-toe-v6: Adding turns and declaring a winner.
+* tic-tac-toe-v7: Lifting state up to the Game component.
+* tic-tac-toe-v8: Adding history functionality.
