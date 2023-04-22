@@ -15,8 +15,8 @@
  *}
  * 
  * ```
- * We will get an error because React components can only return a single JSK element.
- * We have to wrap multiple JSK elements with <> and </> and then return it like this:
+ * We will get an error because React components can only return a single JSX element.
+ * We have to wrap multiple JSX elements with <> and </> and then return it like this:
  * @example
  * ```typescript
  * 
@@ -39,7 +39,7 @@
  * div prop that tells the style to be added to that container.
  *
  * And we rename the component because it is not a single square any more.
- * @returns The component as JSK element.
+ * @returns The component as JSX element.
  */
 export default function Board(): JSX.Element {
   return (

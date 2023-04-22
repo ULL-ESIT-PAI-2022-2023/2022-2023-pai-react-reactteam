@@ -1,16 +1,34 @@
+/**
+ * Universidad de La Laguna
+ * Escuela Superior de Ingeniería y Tecnología
+ * Grado en Ingeniería Informática
+ * Programación de Aplicaciones Interactivas
+ *
+ * @author Jorge Quintana García, Adal Díaz Fariña
+ * @since Apr 22, 2023.
+ * @description We create a state variable to 'remember' the current turn.
+ */
+
 import Square from './Square.tsx';
 import { useState } from 'react';
 
-export default function Board() {
-  // We create a state variable to 'remember' the current turn.
+/**
+ * @description The Board JSX Element.
+ * We add a div with the status in it.
+ * @returns The JSX Element that represent a Board.
+ */
+export default function Board(): JSX.Element {
   const [xIsNext, setXIsNext] = useState(true);
   const [squares, setSquares] = useState(Array(9).fill(null));
 
-  //  If the square have been clicked we dont change the state variable.
-  //  Otherwise we create a copy of the array and: 
-  //    Based on the index passed and on the state variable xIsNext, we write 'X' or 'O'.
-  //  Then we override the state values to render again with the new values. 
-  function handleClick(index: number) {
+  /**
+   * @description If the square have been clicked we dont change the state variable.
+   * Otherwise we create a copy of the array and: 
+   *   Based on the index passed and on the state variable xIsNext, we write 'X' or 'O'.
+   * Then we override the state values to render again with the new values.
+   * @param index The square index.
+   */
+  function handleClick(index: number): void {
     if (calculateWinner(squares) || squares[index]) {
       return;
     }
@@ -24,7 +42,9 @@ export default function Board() {
     setXIsNext(!xIsNext);
   }
 
-  //  This gets called every render, so it looks at the squares Array to see who is the winner.
+  /**
+   * @description This gets called every render, so it looks at the squares Array to see who is the winner.
+   */
   const winner = calculateWinner(squares);
   let status: string;
   if (winner) {
@@ -33,7 +53,6 @@ export default function Board() {
     status = 'Siguiente jugador: ' + (xIsNext ? 'X' : 'O');
   }
 
-  //  We add a div with the status in it. 
   return (
     <>
       <div className="status">{status}</div>
@@ -56,8 +75,12 @@ export default function Board() {
   );
 }
 
-//  Method used to calculate the winner, it returns 'X', 'O' or null.
-function calculateWinner(squares: string[]) {
+/**
+ * @description Method used to calculate the winner, it returns 'X', 'O' or null.
+ * @param squares The current game status of the squares.
+ * @returns The winner as 'X' or 'O'. If there is no winner it returns null.
+ */
+function calculateWinner(squares: string[]): string | null {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
