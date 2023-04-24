@@ -6,7 +6,7 @@
  *
  * @author Jorge Quintana García, Adal Díaz Fariña
  * @since Apr 22, 2023.
- * @description TODO
+ * @description The Board component.
  */
 
 import Square from './Square.tsx';
@@ -17,7 +17,7 @@ import Square from './Square.tsx';
 type valueType = string | null;
 
 /**
- * @description TODO
+ * @description We create an interface with the properties of the board component.
  */
 interface BoardProps {
   xIsNext: boolean,
@@ -26,15 +26,14 @@ interface BoardProps {
 }
 
 /**
- * @description TODO
- * @param param0 
- * @returns 
+ * @description We lift the state up to the Game component.
+ * @param prop The Board properties 
+ * @returns The Board component as JSX element.
  */
 export default function Board({ xIsNext, squares, onPlay }: BoardProps): JSX.Element {
   /**
-   * @description TODO
-   * @param counter 
-   * @returns 
+   * @description The method used to handle a click button event.
+   * @param counter The square refering to.
    */
   function handleClick(counter: number): void {
     if (calculateWinner(squares) || squares[counter]) {
@@ -80,9 +79,9 @@ export default function Board({ xIsNext, squares, onPlay }: BoardProps): JSX.Ele
 }
 
 /**
- * @description TODO
- * @param squares 
- * @returns 
+ * @description Method used to calculate the winner, it returns 'X', 'O' or null.
+ * @param squares The current game status of the squares.
+ * @returns The winner as 'X' or 'O'. If there is no winner it returns null.
  */
 function calculateWinner(squares: string[]): valueType {
   const lines: number[][] = [
