@@ -1,0 +1,140 @@
+body {
+  background-color: #21232A;
+  display: flex;
+  justify-content: center;
+  margin-top: 10vh;
+}
+
+.clock {
+  background-color: white;
+  border-radius: 50%;
+  width: 600px;
+  height: 600px;
+  position: relative;
+}
+
+.clock::after {
+  content: '';
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 11;
+}
+
+.clock .number {
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 18px;
+}
+
+.clock .number1 {
+  transform: rotate(30deg);
+}
+
+.clock .number2 {
+  transform: rotate(60deg);
+}
+
+.clock .number3 {
+  transform: rotate(90deg);
+}
+
+.clock .number4 {
+  transform: rotate(120deg);
+}
+
+.clock .number5 {
+  transform: rotate(150deg);
+}
+
+.clock .number6 {
+  transform: rotate(180deg);
+}
+
+.clock .number7 {
+  transform: rotate(210deg);
+}
+
+.clock .number8 {
+  transform: rotate(240deg);
+}
+
+.clock .number9 {
+  transform: rotate(270deg);
+}
+
+.clock .number10 {
+  transform: rotate(300deg);
+}
+
+.clock .number11 {
+  transform: rotate(330deg);
+}
+
+.number1 div{
+  transform: rotate(-30deg);
+}
+
+.number2 div{
+  transform: rotate(-60deg);
+}
+.number3 div{
+  transform: rotate(-90deg);
+}
+.number4 div{
+  transform: rotate(-120deg);
+}
+.number5 div{
+  transform: rotate(-150deg);
+}
+.number6 div{
+  transform: rotate(-180deg);
+  
+}
+.number7 div{
+  transform: rotate(-210deg);
+}
+.number8 div{
+  transform: rotate(-240deg);
+}
+.number9 div{
+  transform: rotate(-270deg);
+}
+.number10 div{
+  transform: rotate(-300deg);
+}
+.number11 div{
+  transform: rotate(-330deg);
+}
+
+.clock .hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom;
+  z-index: 10;  
+}
+
+.clock .hand.second {
+  width: 5px;
+  height: 45%;
+  background-color: red;
+}
+.clock .hand.minute {
+  width: 7px;
+  height: 40%;
+  background-color: black;
+}
+.clock .hand.hour {
+  width: 10px;
+  height: 30%;
+  background-color: black;
+}
