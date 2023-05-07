@@ -15,33 +15,31 @@ import { GifItem } from './GifItem.tsx';
 import { useFetchGifs } from '../hooks/useFetchGifs';
 
 type GifGridProps = {
-    category: string
+  category: string
 }
 
 export const GifGrid: React.FunctionComponent<GifGridProps> = ({ category }) => {
 
-    const { images, isLoading } = useFetchGifs( category );
+  const { images, isLoading } = useFetchGifs( category );
     
-    return (
-        <>
-            <h3>{ category }</h3>
-            {
-                isLoading && ( <h2>Cargando...</h2> )
-            }
+  return (
+    <>
+      <h3>{ category }</h3>
+      {
+        isLoading && ( <h2>Cargando...</h2> )
+      }
             
 
-            <div className="card-grid">
-                {
-                    images.map( ( image ) => (
-                        <GifItem 
-                            key={ image.id } 
-                            { ...image }
-                        />
-                    ))
-                }
-                
-            </div>
-
-        </>
-    )
+      <div className="card-grid">
+				{
+					images.map( ( image ) => (
+						<GifItem 
+							key={ image.id } 
+									{ ...image }
+						/>
+					))
+				}          
+      </div>    
+		</>  
+	)
 }
