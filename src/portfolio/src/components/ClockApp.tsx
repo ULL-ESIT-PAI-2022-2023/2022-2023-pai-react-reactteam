@@ -8,7 +8,8 @@
  * @author Jorge Quintana García
  * @since Apr 26 2023
  * @desc ClockApp.tsx
- * 
+ * This component have the logic of the clock. It's in charge of refresh the time
+ * each second
  */
 
 import { useState, useEffect } from 'react';

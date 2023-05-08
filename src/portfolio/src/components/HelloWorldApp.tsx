@@ -8,13 +8,10 @@
  * @author Jorge Quintana García
  * @since Apr 20 2023
  * @desc HelloWordApp.tsx
- * 
+ * First example of a component. Hello World!
  */
 
-import * as React from 'react';
-
-export const HelloWorldApp: React.FunctionComponent = (): JSX.Element => {
-
+export const HelloWorldApp = (): JSX.Element => {
   return (
     <h1>¡Hello World!</h1>
   );

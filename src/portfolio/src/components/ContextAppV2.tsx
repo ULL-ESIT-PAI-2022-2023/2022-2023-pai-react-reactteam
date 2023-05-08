@@ -8,7 +8,8 @@
  * @author Jorge Quintana García
  * @since Apr 27 2023
  * @desc ContextAppV2.tsx
- * 
+ * This example explain in a simple way how to deal with useContext, but this time we are
+ * sending a state instead of a value
  */
 
 import { createContext, useContext, useState } from 'react';
@@ -22,7 +23,7 @@ export const MyAppV2 = () => {
       <Form />
       <label>
         <input
-          type="checkbox"
+          type='checkbox'
           checked={theme === 'dark'}
           onChange={(e) => {
             setTheme(e.target.checked ? 'dark' : 'light')
@@ -34,16 +35,22 @@ export const MyAppV2 = () => {
   )
 }
 
-const Form = ({ children }) => {
+
+const Form = () => {
   return (
-    <Panel title="Welcome">
+    <Panel title='Welcome'>
       <Button>Sign up</Button>
       <Button>Log in</Button>
     </Panel>
   );
 }
 
-const Panel = ({ title, children }) => {
+type PanelProps = {
+  title: string,
+  children: any[]
+}
+
+const Panel = ({ title, children }: PanelProps): JSX.Element => {
   const theme = useContext(ThemeContext);
   const className = 'panel-' + theme;
   return (
@@ -54,7 +61,7 @@ const Panel = ({ title, children }) => {
   )
 }
 
-const Button = ({ children }) => {
+const Button = ({ children }: any) => {
   const theme = useContext(ThemeContext);
   const className = 'button-' + theme;
   return (

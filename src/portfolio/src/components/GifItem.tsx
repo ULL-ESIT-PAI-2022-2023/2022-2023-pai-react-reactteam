@@ -8,19 +8,18 @@
  * @author Jorge Quintana García
  * @since Apr 27 2023
  * @desc GifItem.tsx
- * 
+ * This component represent a gift
  */
 
 type GifItemProps = {
   title: string, 
-  url: string, 
-  id: string
+  url: string
 }
 
-export const GifItem: React.FunctionComponent<GifItemProps> = ({ title, url, id }) => {
+export const GifItem = ({title, url}: GifItemProps): JSX.Element => {
 
   return (
-    <div className="card">
+    <div className='card'>
         <img src={ url } alt={ title } />
         <p>{ title }</p>
     </div>

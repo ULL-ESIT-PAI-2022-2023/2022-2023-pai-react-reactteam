@@ -8,7 +8,7 @@
  * @author Jorge Quintana García
  * @since Apr 23 2023
  * @desc CounterAppClassComponent.tsx
- * 
+ * Counter as class component in react
  */
 
 import * as React from 'react';

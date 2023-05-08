@@ -8,7 +8,7 @@
  * @author Jorge Quintana García
  * @since Apr 27 2023
  * @desc GifExpertApp.tsx
- * 
+ * This component has the skeleton of the application. It is only in charge of describing the application and checking if the category is new. 
  */
 
 import { useState } from 'react';
@@ -17,26 +17,25 @@ import { GifGrid } from './GifGrid';
 
 export const GifExpertApp = () => {
 
-  const [ categories, setCategories ] = useState([ 'One Punch' ]);
+  const [categories, setCategories] = useState([ 'One Punch' ]);
     
-  const onAddCategory = ( newCategory: string ) => {
-    if ( categories.includes(newCategory) ) return;
-    setCategories([ newCategory, ...categories ]);
+  const onAddCategory = (newCategory: string) => {
+    if (categories.includes(newCategory)) return;
+    setCategories([newCategory, ...categories]);
   }
     
-
   return (
     <>
       <h1>GifExpertApp</h1>
       <AddCategory 
-        onNewCategory={ (value: string) => onAddCategory(value) }
+        onNewCategory = {(value: string) => onAddCategory(value)}
       />
 
       { 
-        categories.map( ( category ) => (
+        categories.map((category) => (
           <GifGrid 
-            key={ category } 
-            category={ category } />
+            key = {category} 
+            category = {category} />
         ))
       }
     </>

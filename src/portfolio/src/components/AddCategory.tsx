@@ -8,37 +8,32 @@
  * @author Jorge Quintana García
  * @since Apr 27 2023
  * @desc AddCategoryhttp://127.0.0.1:5181/.tsx
- * 
+ *  This component is the form. It is in charge of handling what we receive in the input.
  */
 
 import { useState } from 'react';
 
-type AddCategoryProps = {
-  onNewCategory: string
-}
+export const AddCategory = ({ onNewCategory }: any): JSX.Element => {
 
-export const AddCategory: React.FunctionComponent<AddCategoryProps> = ({ onNewCategory }) => {
+  const [inputValue, setInputValue] = useState('');
 
-  const [ inputValue, setInputValue ] = useState('');
-
-  const onInputChange = ({ target }) => {
-    setInputValue( target.value );
+  const onInputChange = ({target}: any) => {
+    setInputValue(target.value);
   }
 
-  const onSubmit = ( event ) => {
+  const onSubmit = (event: any) => {
     event.preventDefault();
     if( inputValue.trim().length <= 1) return;
 
-    // setCategories( categories => [ inputValue, ...categories ]);
     setInputValue('');
-    onNewCategory( inputValue.trim() );
+    onNewCategory(inputValue.trim());
   }
 
   return (
-    <form onSubmit={ onSubmit }>
+    <form onSubmit={onSubmit}>
       <input 
-        type="text"
-        placeholder="Buscar gifs"
+        type='text'
+        placeholder='Buscar gifs'
         value={ inputValue }
         onChange={ onInputChange }
       />

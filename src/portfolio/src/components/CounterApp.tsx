@@ -8,7 +8,7 @@
  * @author Jorge Quintana García
  * @since Apr 23 2023
  * @desc CounterApp.tsx
- * 
+ * Counter as functional component
  */
 
 import { useState } from 'react';

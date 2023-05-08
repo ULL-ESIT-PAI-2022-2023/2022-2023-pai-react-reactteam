@@ -8,7 +8,7 @@
  * @author Jorge Quintana García
  * @since Apr 26 2023
  * @desc Clock.tsx
- * 
+ * This component describe the clock (JSX.Element)
  */
 
 import * as React from 'react';

@@ -8,7 +8,7 @@
  * @author Jorge Quintana García
  * @since Apr 27 2023
  * @desc FirstApp.tsx
- * 
+ * In this file you can see a simple component mananing props
  */
 
 import React from 'react';

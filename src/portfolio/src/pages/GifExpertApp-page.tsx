@@ -8,7 +8,7 @@
  * @author Jorge Quintana García
  * @since Apr 27 2023
  * @desc GiftExpertApp page.tsx
- * 
+ * This page render our app of show gifts of a specific category
  */
 
 import React from 'react';

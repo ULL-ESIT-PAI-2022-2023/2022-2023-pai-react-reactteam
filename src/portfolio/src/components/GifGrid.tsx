@@ -8,7 +8,7 @@
  * @author Jorge Quintana García
  * @since Apr 27 2023
  * @desc GifGrid.tsx
- * 
+ * This component show a gallery of gifts
  */
 
 import { GifItem } from './GifItem.tsx';
@@ -18,24 +18,24 @@ type GifGridProps = {
   category: string
 }
 
-export const GifGrid: React.FunctionComponent<GifGridProps> = ({ category }) => {
+export const GifGrid= ({category}: GifGridProps): JSX.Element => {
 
-  const { images, isLoading } = useFetchGifs( category );
+  const {images, isLoading} = useFetchGifs(category);
     
   return (
     <>
-      <h3>{ category }</h3>
+      <h3>{category}</h3>
       {
-        isLoading && ( <h2>Cargando...</h2> )
+        isLoading && (<h2>Cargando...</h2>)
       }
             
 
-      <div className="card-grid">
+      <div className='card-grid'>
 				{
-					images.map( ( image ) => (
+					images.map((image: any) => (
 						<GifItem 
-							key={ image.id } 
-									{ ...image }
+							key={image.id} 
+									{...image}
 						/>
 					))
 				}          

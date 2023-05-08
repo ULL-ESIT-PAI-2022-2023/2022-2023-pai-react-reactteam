@@ -8,16 +8,13 @@
  * @author Jorge Quintana García
  * @since Apr 28 2023
  * @desc main.tsx
- * 
+ * This page render a simple router
  */
 
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider} from "react-router-dom";
 import Root from "../routes/root";
 
 const router = createBrowserRouter([
