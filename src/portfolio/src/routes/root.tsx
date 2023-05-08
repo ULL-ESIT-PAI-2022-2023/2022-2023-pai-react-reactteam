@@ -42,10 +42,10 @@ export const Root = () => {
         <nav>
           <ul>
             <li>
-              <a href={`/contacts/1`}>Your Name</a>
+              <a href={`/hello`}>Your Name</a>
             </li>
             <li>
-              <a href={`/contacts/2`}>Your Friend</a>
+              <a href={`/hello`}>Your Friend</a>
             </li>
           </ul>
         </nav>

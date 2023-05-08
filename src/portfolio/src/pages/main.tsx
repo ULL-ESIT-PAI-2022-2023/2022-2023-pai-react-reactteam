@@ -14,14 +14,19 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import { createBrowserRouter, RouterProvider} from "react-router-dom";
-import Root from "../routes/root";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {Root} from "../routes/root";
+import { HelloWorldApp } from "../components/HelloWorldApp";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
   },
+  {
+    path: "/hello",
+    element: <HelloWorldApp />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
